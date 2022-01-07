@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { FilhoComponent } from './../filho/filho.component';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-pai',
@@ -6,11 +7,13 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./pai.component.css']
 })
 export class PaiComponent {
-  paises = ['Brasil', 'Estados Unidos', 'Japão', 'Israel'];
 
-  @Input() votado: string = "";
+  @ViewChild(FilhoComponent, { static: false })
+  private filhoComponent!: FilhoComponent;
 
-  onVoted(votado: string) {
-    this.votado = votado;
+  nome!: string;
+
+  ngAfterViewInit() {
+    setTimeout(() => this.nome = this.filhoComponent.nome, 0);
   }
 }
