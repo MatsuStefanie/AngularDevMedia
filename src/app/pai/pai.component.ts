@@ -6,6 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pai.component.css']
 })
 export class PaiComponent {
-
-  nomes = ['Phil', 'Mark', ' ', 'June'];
+  paises = ['Brasil', 'Estados Unidos', ' ', 'Israel'];
 }

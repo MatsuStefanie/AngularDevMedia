@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-filho',
@@ -6,13 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./filho.component.css']
 })
 export class FilhoComponent {
-  private _nome = '';
 
-  @Input()
-  set nome(nome: string) {
-    this._nome = (nome && nome.trim()) || '<Nome em branco>';
+  @Input() pais: string ='';
+
+  ngOnChanges(changes: SimpleChanges){
+   for(let change in changes)
+   {
+    this.pais = (changes[change].currentValue && changes[change].currentValue.trim()) || '<País não informado>';
+   }
   }
-
-  get nome(): string { return this._nome;}
-
 }
