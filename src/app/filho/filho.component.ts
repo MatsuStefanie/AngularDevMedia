@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filho',
@@ -6,13 +6,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./filho.component.css']
 })
 export class FilhoComponent {
-  private _nome = '';
+  @Input() pais: string = '';
 
-  @Input()
-  set nome(nome: string) {
-    this._nome = (nome && nome.trim()) || '<Nome em branco>';
+  @Output() votado = new EventEmitter<string>();
+
+  vota(pais: string) {
+    this.votado.emit(pais);
   }
-
-  get nome(): string { return this._nome;}
-
 }

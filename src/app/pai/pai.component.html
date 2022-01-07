@@ -1,1 +1,2 @@
-<app-filho *ngFor="let nome of nomes" [nome]="nome"></app-filho>
+<app-filho  *ngFor="let pais of paises" [pais]="pais" (votado)="onVoted($event)"></app-filho>
+<p>Você votou em: {{ votado }}</p>

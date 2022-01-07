@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-pai',
@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pai.component.css']
 })
 export class PaiComponent {
+  paises = ['Brasil', 'Estados Unidos', 'Japão', 'Israel'];
 
-  nomes = ['Phil', 'Mark', ' ', 'June'];
+  @Input() votado: string = "";
+
+  onVoted(votado: string) {
+    this.votado = votado;
+  }
 }
