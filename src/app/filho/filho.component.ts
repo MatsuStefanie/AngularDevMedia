@@ -5,14 +5,14 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './filho.component.html',
   styleUrls: ['./filho.component.css']
 })
-export class FilhoComponent implements OnInit {
+export class FilhoComponent {
+  private _nome = '';
 
   @Input()
-  nomeFilho: string = '';
-
-  constructor() { }
-
-  ngOnInit(): void {
+  set nome(nome: string) {
+    this._nome = (nome && nome.trim()) || '<Nome em branco>';
   }
+
+  get nome(): string { return this._nome;}
 
 }

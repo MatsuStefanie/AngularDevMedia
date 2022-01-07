@@ -5,15 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './pai.component.html',
   styleUrls: ['./pai.component.css']
 })
-export class PaiComponent implements OnInit {
-  nomePai : string = 'Eduardo';
-  novoNome : string  = '';
-  constructor() { }
+export class PaiComponent {
 
-  ngOnInit(): void {
-  }
-
-  trocando(){
-    this.nomePai = this.novoNome;
-  }
+  nomes = ['Phil', 'Mark', ' ', 'June'];
 }
